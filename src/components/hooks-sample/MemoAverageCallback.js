@@ -1,5 +1,6 @@
 import React, { useState, useMemo, useCallback, useRef } from 'react';
 
+
 // input에 onChange 될 때도 평균값을 계산하게된다.
 // useMemo를 사용하여 onInsert 일 때만 동작하게 하자.
 const getAverage = numbers => {
