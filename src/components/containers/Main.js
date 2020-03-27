@@ -5,6 +5,9 @@ import AxiosTest from 'components/axios-test/AxiosTest';
 import NewsApp from '../news-viewer/NewsApp';
 import NewsAppRoute from '../news-viewer/NewsAppRoute';
 import Cleanup from '../hooks-sample/Cleanup';
+import Game from '../tic-tac-toe/Game'
+import PhoneBookApp from '../phone_book/PhoneBookApp';
+import TodoListApp from 'components/todo_list/TodoListApp';
 
 class Main extends Component {
     render() {
@@ -67,20 +70,32 @@ class Main extends Component {
                 linkName: '빈페이지',
             },
             {
+                linkUrl: '/game',
+                linkName: 'Game',
+            },
+            {
+                linkUrl: '/phone',
+                linkName: 'PhoneBookSample',
+            },
+            {
+                linkUrl: '/todo',
+                linkName: 'Todo',
+            },
+            {
                 linkUrl: '/hooks',
-                linkName: 'hooks',
+                linkName: 'Hooks',
             },
             {
                 linkUrl: '/axios',
-                linkName: 'axios',
+                linkName: 'Axios',
             },
             {
                 linkUrl: '/news',
-                linkName: 'news',
+                linkName: 'News',
             },
             {
                 linkUrl: '/newsRoute',
-                linkName: '뉴스라우트'
+                linkName: 'News-route'
             }
         ];
 
@@ -100,6 +115,9 @@ class Main extends Component {
             <div className="Main-content">
                 <Switch>
                     <Route path={["/"]} component={Blank} exact={true} />
+                    <Route path={["/game"]} component={Game} />
+                    <Route path={["/phone","/phonebook"]} component={PhoneBookApp}/>
+                    <Route path={["/Todo","/TodoList"]} component={TodoListApp}/>
                     <Route path={["/hooks"]} component={Cleanup} />
                     <Route path={["/axios"]} component={AxiosTest} />
                     <Route path={["/news"]} component={NewsApp} />
