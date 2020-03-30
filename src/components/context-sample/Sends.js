@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+// eslint-disable-next-line no-unused-vars
 import { SampleConsumer, useSample } from '../../contexts/sample';
 
 class Sends extends Component {

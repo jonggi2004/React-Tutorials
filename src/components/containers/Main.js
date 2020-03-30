@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Link, Switch } from 'react-router-dom';
 import styled from 'styled-components';
-import ScrollBox from '../ref-sample/ScrollBox';
+import RefApp from '../ref-sample/RefApp';
 import Game from '../tic-tac-toe/Game';
 import PhoneBookApp from '../phone_book/PhoneBookApp';
 import TodoListApp from '../todo_list/TodoListApp';
@@ -18,6 +18,10 @@ import HistorySample from '../router/HistorySample';
 import ContextApp from '../context-sample/ContextApp';
 
 class Main extends Component {
+    state = {
+        visible: true,
+    };
+
     render() {
         // styled-components
         const MainContainerBlock = styled.div`
@@ -30,7 +34,7 @@ class Main extends Component {
                 top: 0;
                 left: 0;
                 bottom: 0;
-                width: 20vw;
+                width: ${this.state.visible ? '20vw' : '0'};
                 height: 100%;
                 overflow: hidden;
                 background-color: whitesmoke;
@@ -56,10 +60,23 @@ class Main extends Component {
                     }
                 }
             }
+            .Main-spliter {
+                position: absolute;
+                top: 0;
+                left: ${this.state.visible ? '20vw' : '0'};
+                bottom: 0;
+                width: 1vw;
+                height: 100%;
+                overflow: hidden;
+                background-color: lightslategrey;
+                &:hover {
+                    cursor: pointer;
+                }
+            }
             .Main-content {
                 position: absolute;
                 top: 0;
-                left: 20vw;
+                left: ${this.state.visible ? '21vw' : '1vw'};
                 right: 0;
                 bottom: 0;
                 height: 100%;
@@ -78,8 +95,8 @@ class Main extends Component {
                 linkName: '빈페이지',
             },
             {
-                linkUrl: '/scrollbox',
-                linkName: '스크롤박스',
+                linkUrl: '/ref',
+                linkName: 'REF',
             },
             {
                 linkUrl: '/game',
@@ -164,10 +181,12 @@ class Main extends Component {
                     </ul>
                 </aside>
             </div>
+            <div className="Main-spliter" onClick={e => this.setState({visible: !this.state.visible})}>
+            </div>
             <div className="Main-content">
                 <Switch>
                     <Route path={["/"]} component={Blank} exact={true} />
-                    <Route path={"/scrollbox"} component={ScrollBox}/>
+                    <Route path={"/ref"} component={RefApp}/>
                     <Route path={["/game"]} component={Game} />
                     <Route path={["/phone","/phonebook"]} component={PhoneBookApp}/>
                     <Route path={["/todo","/todolist"]} component={TodoListApp}/>
