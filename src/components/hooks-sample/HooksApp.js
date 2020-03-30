@@ -10,14 +10,9 @@ import InfoCustom from './InfoCustom';
 
 const HooksApp = () => {
     const [visible, setvisible] = useState(false);
-
-    const scrolled = {
-        height: '100%',
-        overflowY: 'scroll'
-    };
-
+    
     return (
-        <div style={scrolled}>
+        <div style={{height: '100%'}}>
             <button onClick={() => setvisible(!visible)}>{visible ? '숨기기' : '보이기'}</button>
             <hr />
             {visible && <Counter />}

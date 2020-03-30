@@ -5,7 +5,7 @@ import ImmerTemplate2 from './ImmerTemplate2';
 
 const ImmerApp = () => {
     return (
-        <div style={{height: '100%', overflowY: 'scroll'}}>
+        <div style={{height: '100%'}}>
             <h2>불변성 유지: 기본</h2>
             <ImmerTemplate />
             <hr />
