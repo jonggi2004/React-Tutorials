@@ -8,7 +8,7 @@ import Info from './Info';
 import InfoCustom from './InfoCustom';
 
 
-const Cleanup = () => {
+const HooksApp = () => {
     const [visible, setvisible] = useState(false);
 
     const scrolled = {
@@ -37,4 +37,4 @@ const Cleanup = () => {
     );
 };
 
-export default Cleanup;
+export default HooksApp;

@@ -8,7 +8,7 @@ import WithRouterSample from './WithRouterSample';
 
 const ProfilesNavLink = () => {
     const activeStyle = {
-        background: 'black',
+        backgroundColer: 'black',
         color: 'white'
     };
 
@@ -18,7 +18,7 @@ const ProfilesNavLink = () => {
             <h3>사용자 목록</h3>
             <ul>
                 <li>
-                    <NavLink activeStyle={activeStyle} to="/profiles/velog" active={true}>velog</NavLink>
+                    <NavLink activeStyle={activeStyle} to="/profiles/velog">velog</NavLink>
                 </li>
                 <li>
                     <NavLink activeStyle={activeStyle} to="/profiles/albert">albert</NavLink>
